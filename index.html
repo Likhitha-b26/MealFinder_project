@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal-Finder</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- nav bar -->
+
+    <nav>
+      <div class="logo">
+        <ion-icon name="restaurant"></ion-icon>
+        MEAL FINDER
+      </div>
+
+      <div id="menuBtn">
+        <ion-icon name="menu"></ion-icon>
+      </div>
+    </nav>
+
+    <!-- side-bar -->
+
+    <div id="sidebar">
+      <div id="closeBtn">
+        <ion-icon name="close-circle"></ion-icon>
+      </div>
+
+      <ul id="categoryList"></ul>
+    </div>
+
+    <!-- hero section -->
+
+    <section class="hero">
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search recipes here..."
+        />
+
+        <button id="searchBtn">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </div>
+
+      <h1>What are your favorite cuisines?</h1>
+
+      <p>PERSONALIZE YOUR EXPERIENCE</p>
+    </section>
+
+    <!-- search results section -->
+
+    <section id="searchResults" style="display: none">
+      <div class="meals-heading">
+        <h2>MEALS</h2>
+      </div>
+
+      <div id="mealsContainer"></div>
+    </section>
+
+    <!-- categories -->
+
+    <section class="categories-section">
+      <h2>CATEGORIES</h2>
+
+      <div id="categories"></div>
+    </section>
+
+    <!-- category meals -->
+
+    <section id="categoryMeals" style="display: none">
+      <div id="category-info">
+        <h2 id="categoryTitle"></h2>
+        <p id="categoryDescription"></p>
+      </div>
+
+      <div class="meals-heading">
+        <h2>MEALS</h2>
+      </div>
+
+      <div id="categoryMealsContainer"></div>
+    </section>
+
+    <!-- meal details -->
+
+    <section id="mealDetails" style="display: none">
+      <div id="breadcrumb"></div>
+
+      <div class="meal-details-box">
+        <div class="meal-left">
+          <img id="detailImage" />
+        </div>
+
+        <div class="meal-right">
+          <h2 id="detailName"></h2>
+
+          <div class="meal-meta">
+            <p>
+              <strong>CATEGORY:</strong>
+              <span id="detailCategory"></span>
+            </p>
+
+            <p>
+              <strong>AREA:</strong>
+              <span id="detailArea"></span>
+            </p>
+
+            <p>
+              <strong>SOURCE:</strong>
+              <a id="detailSource" target="_blank">View Recipe</a>
+            </p>
+
+            <p>
+              <strong>TAGS:</strong>
+              <span id="detailTags"></span>
+            </p>
+          </div>
+          <div id="ingredientsBox"></div>
+        </div>
+      </div>
+
+      <div id="measuresBox"></div>
+      <div id="instructionsBox"></div>
+    </section>
+
+    <script src="./script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
