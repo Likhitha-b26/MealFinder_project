@@ -105,6 +105,7 @@ async function searchMeals() {
     mealsContainer.innerHTML = "";
     if (data.meals) {
       categoryMeals.style.display = "none";
+      mealDetails.style.display = "none";
       document.querySelector(".categories-section").style.display = "block";
       data.meals.forEach((meal) => {
         mealsContainer.innerHTML += `<div class="meal-card" onclick="getMealDetails('${meal.idMeal}')">
@@ -134,6 +135,8 @@ async function getMealsByCategory(categoryName) {
   sidebar.classList.remove("active");
 
   searchResults.style.display = "none";
+
+  mealDetails.style.display = "none";
 
   document.querySelector(".categories-section").style.display = "none";
 
@@ -187,7 +190,8 @@ async function getMealDetails(id) {
 
     const meal = data.meals[0];
 
-    breadcrumb.textContent = `${meal.strCategory}/${meal.strMeal}`;
+    breadcrumb.innerHTML = ` <ion-icon name="home"></ion-icon> &nbsp;&nbsp;
+    ${meal.strMeal.toUpperCase()}`;
 
     detailImage.src = meal.strMealThumb;
 
@@ -207,9 +211,11 @@ async function getMealDetails(id) {
 
     for (let i = 1; i <= 20; i++) {
       if (meal[`strIngredient${i}`] && meal[`strIngredient${i}`].trim()) {
-        ingredients += `<li>${meal[`strIngredient${i}`]}</li>`;
+        ingredients += `<li><span class="ingredient-number">${i}</span>${meal[`strIngredient${i}`]}</li>`;
 
-        measures += `<li>${meal[`strMeasure${i}`]}</li>`;
+        measures += `<li>
+        <ion-icon name="restaurant"></ion-icon>
+        ${meal[`strMeasure${i}`]}</li>`;
       }
     }
 
@@ -219,10 +225,18 @@ async function getMealDetails(id) {
     measuresBox.innerHTML = `<h3>Measures</h3>
     <ul>${measures}</ul>`;
 
-    instructionsBox.innerHTML = `<h3>Instructions</h3>
-    <p>${meal.strInstructions}</p>`;
+    const steps = meal.strInstructions
+      .split(".")
+      .filter((step) => step.trim() !== "");
+
+    instructionsBox.innerHTML = `<h3>Instructions:</h3>
+    <ul>
+    ${steps.map((step) => `<li><ion-icon name="checkbox-outline"></ion-icon>${step}</li>`).join("")}</ul>
+    `;
 
     mealDetails.style.display = "block";
+
+    document.querySelector(".categories-section").style.display = "block";
 
     mealDetails.scrollIntoView({ behavior: "smooth" });
   } catch (error) {

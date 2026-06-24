@@ -60,14 +60,6 @@
       <div id="mealsContainer"></div>
     </section>
 
-    <!-- categories -->
-
-    <section class="categories-section">
-      <h2>CATEGORIES</h2>
-
-      <div id="categories"></div>
-    </section>
-
     <!-- category meals -->
 
     <section id="categoryMeals" style="display: none">
@@ -86,7 +78,14 @@
     <!-- meal details -->
 
     <section id="mealDetails" style="display: none">
-      <div id="breadcrumb"></div>
+      <div id="breadcrumb">
+        <ion-icon name="home"></ion-icon>
+        <span id="breadcrumbText"></span>
+      </div>
+
+      <div class="details-heading">
+        <h2>MEAL DETAILS</h2>
+      </div>
 
       <div class="meal-details-box">
         <div class="meal-left">
@@ -122,7 +121,17 @@
       </div>
 
       <div id="measuresBox"></div>
-      <div id="instructionsBox"></div>
+      <div class="instructions-wrapper">
+        <div id="instructionsBox"></div>
+      </div>
+    </section>
+
+    <!-- categories -->
+
+    <section class="categories-section">
+      <h2>CATEGORIES</h2>
+
+      <div id="categories"></div>
     </section>
 
     <script src="./script.js"></script>
