@@ -113,6 +113,9 @@ nav {
   border-radius: 30px;
 }
 .search-box button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 45px;
   height: 45px;
   border: none;
@@ -157,8 +160,11 @@ nav {
   margin-top: 8px;
 }
 .category-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   background: white;
-  padding: 10px;
+  padding: 8px;
+  width: 90%;
+  margin: auto;
   position: relative;
   border: 1px solid #eee;
   cursor: pointer;
@@ -169,7 +175,10 @@ nav {
   transform: translateY(-5px);
 }
 .category-card img {
-  width: 100%;
+  width: 85%;
+  height: 160px;
+  object-fit: contain;
+  margin: auto;
   display: block;
 }
 
@@ -180,10 +189,10 @@ nav {
 
   background: #f57c00;
   color: white;
-  border-radius: 3px;
-
-  font-size: 14px;
-  padding: 4px 22px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  padding: 5px 10px;
 }
 
 #searchResults {
@@ -214,8 +223,9 @@ nav {
   margin-top: 30px;
 }
 .meal-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   background: white;
-  padding: 10px;
+  padding: 8px;
 
   border: 1px solid #eee;
 }
@@ -235,7 +245,10 @@ nav {
   border-radius: 14px;
 }
 .meal-card img {
-  width: 100%;
+  width: 85%;
+  height: 140px;
+  object-fit: cover;
+  margin: auto;
   display: block;
 }
 .meal-area {
@@ -525,6 +538,22 @@ nav {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .category-card img {
+    width: 80%;
+    height: 130px;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+  }
+
+  .meal-card img {
+    width: 85%;
+    height: 120px;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+  }
+
   .meal-details-box {
     flex-direction: column;
     gap: 25px;
@@ -605,8 +634,8 @@ nav {
     width: 70px;
   }
   .badge {
-    font-size: 10px;
-    padding: 3px 8px;
+    font-size: 9px;
+    padding: 3px 6px;
     top: 6px;
     right: 6px;
   }
@@ -618,8 +647,8 @@ nav {
     height: 120px;
   }
   .meal-badge {
-    font-size: 9px;
-    padding: 3px 6px;
+    font-size: 8px;
+    padding: 2px 5px;
   }
   .meals-heading h2 {
     letter-spacing: 1px;
@@ -631,6 +660,29 @@ nav {
 
   #categoryMealsContainer {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-card {
+    padding: 5px;
+  }
+  .category-card img {
+    width: 75%;
+    height: 100px;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+  }
+
+  .meal-card {
+    padding: 5px;
+  }
+
+  .meal-card img {
+    width: 80%;
+    height: 90px;
+    object-fit: cover;
+    margin: auto;
+    display: block;
   }
 
   #categoryMeals {
